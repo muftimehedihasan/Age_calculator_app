@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .error-message {
+            color: #f87171;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex justify-center items-center">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
+        <h1 class="text-3xl font-bold text-purple-500 mb-8 text-center">Age Calculator</h1>
+
+        <!-- Age Calculator Form -->
+        <form id="ageForm" class="space-y-6">
+            <div class="grid grid-cols-3 gap-4">
+
+                <div class="flex flex-col">
+                    <label for="day" class="text-sm font-bold text-gray-600">Day</label>
+                    <input id="day" type="number" placeholder="DD" class="border p-2 rounded-md focus:ring-2 focus:ring-purple-500" required>
+                    <p class="error-message" id="dayError"></p>
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="month" class="text-sm font-bold text-gray-600">Month</label>
+                    <input id="month" type="number" placeholder="MM" class="border p-2 rounded-md focus:ring-2 focus:ring-purple-500" required>
+                    <p class="error-message" id="monthError"></p>
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="year" class="text-sm font-bold text-gray-600">Year</label>
+                    <input id="year" type="number" placeholder="YYYY" class="border p-2 rounded-md focus:ring-2 focus:ring-purple-500" required>
+                    <p class="error-message" id="yearError"></p>
+                </div>
+
+            </div>
+
+            <button type="submit" class="w-full bg-purple-500 text-white p-2 rounded-md hover:bg-purple-600 transition">
+                Calculate Age
+            </button>
+            
+        </form>
+
+        <!-- Result Display -->
+        <div id="result" class="mt-8 text-center hidden">
+            <p class="text-3xl font-bold" id="years">-- years</p>
+            <p class="text-2xl" id="months">-- months</p>
+            <p class="text-xl" id="days">-- days</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
